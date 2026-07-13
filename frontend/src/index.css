@@ -1,0 +1,142 @@
+@import "tailwindcss";
+
+body {
+  background-color: #0A0E17;
+  font-family: 'Inter', sans-serif;
+}
+
+.app-shell {
+  min-height: 100vh;
+  background-color: #0A0E17;
+  background-image:
+    radial-gradient(circle at 15% 10%, rgba(34, 211, 184, 0.12), transparent 40%),
+    radial-gradient(circle at 85% 90%, rgba(139, 92, 246, 0.12), transparent 40%);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.045);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 20px 50px -20px rgba(0,0,0,0.6);
+}
+
+.field-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #94A3B8;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.th-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #94A3B8;
+  font-weight: 500;
+  text-align: left;
+}
+
+.field-input {
+  width: 100%;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-family: 'Inter', sans-serif;
+  color: #F1F5F9;
+  outline: none;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+.field-input::placeholder { color: #475569; }
+.field-input:focus {
+  border-color: #22D3B8;
+  background: rgba(34,211,184,0.05);
+}
+
+.field-select {
+  width: 100%;
+  background-color: #131826;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-family: 'Inter', sans-serif;
+  color: #F1F5F9;
+  outline: none;
+  color-scheme: dark;
+  transition: border-color 0.2s ease;
+}
+.field-select:focus {
+  border-color: #22D3B8;
+}
+.field-select option {
+  background-color: #131826;
+  color: #F1F5F9;
+}
+
+.btn-gradient {
+  font-family: 'JetBrains Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 12px;
+  background-image: linear-gradient(135deg, #22D3B8, #8B5CF6);
+  color: #06070B;
+  font-weight: 600;
+  padding: 11px 18px;
+  border-radius: 8px;
+  transition: filter 0.2s ease, transform 0.15s ease;
+}
+.btn-gradient:hover { filter: brightness(1.1); }
+.btn-gradient:active { transform: scale(0.98); }
+
+.btn-outline {
+  font-family: 'JetBrains Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 12px;
+  background-color: rgba(255,255,255,0.03);
+  color: #CBD5E1;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+.btn-outline:hover {
+  border-color: #22D3B8;
+  color: #22D3B8;
+  background: rgba(34,211,184,0.06);
+}
+
+.role-pill {
+  font-family: 'JetBrains Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 10px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: rgba(34, 211, 184, 0.12);
+  color: #22D3B8;
+  border: 1px solid rgba(34, 211, 184, 0.3);
+}
+
+.status-inside {
+  background-color: rgba(52, 211, 153, 0.12);
+  color: #34D399;
+  border: 1px solid rgba(52, 211, 153, 0.3);
+}
+.status-out {
+  background-color: rgba(148, 163, 184, 0.1);
+  color: #94A3B8;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+.gradient-text {
+  background-image: linear-gradient(135deg, #22D3B8, #8B5CF6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
