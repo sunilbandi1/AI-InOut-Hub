@@ -1,0 +1,62 @@
+services:
+
+  mysql:
+    image: mysql:8.0
+    container_name: aiinouthub-mysql
+    restart: always
+
+    environment:
+      MYSQL_ROOT_PASSWORD: Sunil@3236
+      MYSQL_DATABASE: inouthub_db
+
+    ports:
+      - "3307:3306"
+
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  backend:
+    build: ./backend
+    container_name: aiinouthub-backend
+
+    depends_on:
+      - mysql
+
+    environment:
+      SECRET_KEY: some-random-string-here
+      JWT_SECRET_KEY: another-random-string-here
+      DATABASE_URL: mysql+pymysql://root:Sunil%403236@mysql:3306/inouthub_db
+
+    ports:
+      - "5000:5000"
+
+    volumes:
+      - ./backend:/app
+
+  frontend:
+    build: ./frontend
+    container_name: aiinouthub-frontend
+
+    ports:
+      - "5173:5173"
+
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+
+  nginx:
+    image: nginx:latest
+    container_name: aiinouthub-nginx
+
+    depends_on:
+      - frontend
+      - backend
+
+    ports:
+      - "80:80"
+
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+
+volumes:
+  mysql_data:
